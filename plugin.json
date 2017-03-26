@@ -1,0 +1,14 @@
+{
+	"description": "<p>Digitally Imported - Addictive Electronic Music 24/7<p>For more information, visit <a href=\"http://di.fm\">http://di.fm</a>",
+	"author": "Andreas Smas, Henrik Andersson, lprot",
+	"title": "Digitally Imported",
+	"synopsis": "Addictive Electronic Music 24/7",
+	"version": "0.6.2",
+	"file": "di.js",
+	"showtimeVersion": "5.0.75",
+	"type": "ecmascript",
+	"id": "di",
+	"ui_type": "signle",
+	"icon": "di.bmp",
+	"category": "music"
+}

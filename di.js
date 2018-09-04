@@ -54,7 +54,7 @@
       subtitles: []
     }
     page.source = 'audioparams:' + JSON.stringify(videoParams);
-  }); 
+  });
 
   plugin.addURI(PREFIX+"BrowsebyArtist", function(page) {
    // page.type = 'directory';
@@ -71,14 +71,16 @@
 
     channels.sort(function (a, b) { return a.key.localeCompare(b.key);});
 
+      print("channels length = " + channels.length);
     for (var i in channels) {
       var entity = channels[i];
       var icon = entity.images.default.match(/(^[^\{]*)/)[1];
       page.appendItem(PREFIX+ "channel:" + entity.key, 'video', {
-    title: entity.key,
-	description: entity.description_short,
-	icon: icon.substr(0, 4) == 'http' ? icon : 'http:' + icon + '?size=150x150',
-	album: ''
+          title: entity.key,
+          description: entity.description_short,
+          icon: icon.substr(0, 4) == 'http' ? icon : 'http:' + icon + '?size=150x150',
+          album: '',
+          extra_data: "total:" + channels.length
       });
     };
     page.metadata.title = channels[0].key;
@@ -87,11 +89,11 @@
   plugin.addURI(PREFIX+"ppp", function(page) {
 	  page.metadata.title = "pxpxpx";
       page.appendItem(PREFIX + 'BrowsebyArtist', 'directory',{title: "Browse by Artist" });
-  }); 
+  });
 
   plugin.addURI(plugin.getDescriptor().id + ':start', function(page) {
 	  page.metadata.title = "start";
       page.appendItem(PREFIX + 'ppp', 'directory',{title: "ppp" });
-  }); 
+  });
 
 })(this);
